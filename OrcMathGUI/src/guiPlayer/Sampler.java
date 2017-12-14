@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bensStuff.Graduation;
+import components.Apple;
 import guiTeacher.GUIApplication;
 import guiTeacher.components.*;
 import guiTeacher.interfaces.KeyedComponent;
@@ -120,6 +121,7 @@ public class Sampler extends GUIApplication {
 			}); 
 			viewObjects.add(cb);
 			viewObjects.add(new Graduation());
+			viewObjects.add(new Apple());
 		}
 		
 		public void mouseDragged(MouseEvent m) {
