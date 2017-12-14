@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import bensStuff.Graduation;
 import guiTeacher.GUIApplication;
 import guiTeacher.components.*;
 import guiTeacher.interfaces.KeyedComponent;
@@ -119,7 +119,7 @@ public class Sampler extends GUIApplication {
 				}
 			}); 
 			viewObjects.add(cb);
-			
+			viewObjects.add(new Graduation());
 		}
 		
 		public void mouseDragged(MouseEvent m) {
