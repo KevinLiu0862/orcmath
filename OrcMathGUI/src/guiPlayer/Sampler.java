@@ -121,7 +121,7 @@ public class Sampler extends GUIApplication {
 			}); 
 			viewObjects.add(cb);
 			viewObjects.add(new Graduation());
-			viewObjects.add(new Superheroes(name, gender, color, power);
+			
 		}
 		
 		public void mouseDragged(MouseEvent m) {

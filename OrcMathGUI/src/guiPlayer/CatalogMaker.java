@@ -1,5 +1,7 @@
 package guiPlayer;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,7 +9,11 @@ import components.Superheroes;
 
 public class CatalogMaker {
 
-	private ArrayList<Superheroes> list;
+	private static ArrayList<Superheroes> list;
+	private static String name;
+	private static String gender;
+	private static String color;
+	private static String power;
 	
 	public CatalogMaker() {
 		
@@ -27,18 +33,19 @@ public class CatalogMaker {
 		System.out.println(cm.getCSVContent());
 		
 		System.out.println("Enter the name of your superhero");
-		String name = in.nextLine();
+		 name = in.nextLine();
 		System.out.println("Enter the gender of your superhero");
-		String gender = in.nextLine();
+		 gender = in.nextLine();
 		System.out.println("Enter the color of your superhero");
-		String color = in.nextLine();
+		 color = in.nextLine();
 		System.out.println("Enter the power of your superhero");
-		String power = in.nextLine();
+		 power = in.nextLine();
 		
 		cm.addNewHero(name, gender, color, power);
+		cm.testSaveContent("superheroes.csv");
 	}
 
-	public String getCSVContent(){
+	public static String getCSVContent(){
 		String data = "Name,Gender,Color,Power \n";
 		
 		for (Superheroes s : list) {
@@ -54,4 +61,27 @@ public class CatalogMaker {
 		System.out.println("Superhero created successfully.");
 	}
 	
+	
+	private void testSaveContent(String fileName) {
+
+		try {
+
+			FileWriter fw = new FileWriter(fileName);
+			
+			for(Superheroes s: ) {
+			fw.write(getCSVContent() + "\n");
+			}
+
+			fw.close();
+
+			System.out.println("Success! File \"" + fileName + "\" saved!");
+
+		} catch (IOException e) {
+
+			System.out.println(
+					"An IOException was thrown. \nCheck to see that the directory where you tried to save the file actually exists.");
+
+		}
+
+	}
 }
