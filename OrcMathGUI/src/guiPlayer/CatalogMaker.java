@@ -68,7 +68,7 @@ public class CatalogMaker {
 
 			FileWriter fw = new FileWriter(fileName);
 			
-			for(Superheroes s: ) {
+			for(Superheroes s: list) {
 			fw.write(getCSVContent() + "\n");
 			}
 
