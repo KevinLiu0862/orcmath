@@ -21,7 +21,5 @@ public class CatalogScreen extends FullFunctionScreen {
 		viewObjects.add(titleField);
 	}
 
-
-
 	
 }
