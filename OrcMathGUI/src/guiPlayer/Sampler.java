@@ -10,14 +10,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-<<<<<<< HEAD
 import bensStuff.Graduation;
 import components.Superheroes;
-=======
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
->>>>>>> branch 'master' of https://github.com/KevinLiu0862/orcmath.git
 import guiTeacher.GUIApplication;
 import guiTeacher.components.*;
 import guiTeacher.interfaces.FileRequester;

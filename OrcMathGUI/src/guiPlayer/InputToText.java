@@ -12,7 +12,6 @@ public class InputToText {
 	private static ArrayList<InputToText> list;
 	Scanner in = new Scanner(System.in);
 	
-	private static input;
 
 
 	public static void main(String[] args) {
