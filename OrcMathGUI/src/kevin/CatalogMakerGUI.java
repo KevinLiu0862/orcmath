@@ -12,7 +12,7 @@ public class CatalogMakerGUI extends GUIApplication {
 	}
 
 	public static void main(String[] args) {
-		CatalogMakerGUI sample = new CatalogMakerGUI(800, 550);
+		CatalogMakerGUI sample = new CatalogMakerGUI(1000, 1000);
 		Thread go = new Thread(sample);
 		go.start();
 
