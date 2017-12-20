@@ -2,6 +2,7 @@ package kevin;
 
 import java.util.List;
 
+import guiPlayer.CatalogMaker;
 import guiTeacher.components.Action;
 import guiTeacher.components.Button;
 import guiTeacher.components.TextField;
@@ -12,6 +13,7 @@ public class CatalogScreen extends FullFunctionScreen {
 	
 	private TextField titleField;
 	private Button addButton;
+	private CatalogMaker catalog;
 
 	public CatalogScreen(int width, int height) {
 		super(width, height);
@@ -19,6 +21,8 @@ public class CatalogScreen extends FullFunctionScreen {
 
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
+		
+		catalog = new CatalogMaker();
 		
 		titleField = new TextField(40, 40, 200, 30, "Text goes here", "Title");
 		viewObjects.add(titleField);
