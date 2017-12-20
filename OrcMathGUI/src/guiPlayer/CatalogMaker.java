@@ -45,7 +45,7 @@ public class CatalogMaker {
 		cm.testSaveContent("superheroes.csv");
 	}
 
-	public static String getCSVContent(){
+	public String getCSVContent(){
 		String data = "Name,Gender,Color,Power \n";
 		
 		for (Superheroes s : list) {
