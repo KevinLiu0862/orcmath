@@ -62,15 +62,15 @@ public class CatalogMaker {
 	}
 	
 	
-	private void testSaveContent(String fileName) {
+	public void testSaveContent(String fileName) {
 
 		try {
 
 			FileWriter fw = new FileWriter(fileName);
 			
-			for(Superheroes s: list) {
+			//for(Superheroes s: list) {
 			fw.write(getCSVContent() + "\n");
-			}
+			//}
 
 			fw.close();
 
