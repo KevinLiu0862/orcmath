@@ -1,4 +1,4 @@
-package myStuff;
+package myStuff.simonproject;
 
 import guiTeacher.interfaces.Visible;
 

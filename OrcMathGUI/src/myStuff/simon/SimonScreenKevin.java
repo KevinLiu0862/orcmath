@@ -141,19 +141,26 @@ public class SimonScreenKevin extends ClickableScreen implements Runnable {
 	/**
 	Placeholder until partner finishes implementation of ProgressInterface
 	*/
-
-	
 	private MoveInterfaceKevin getMove(int bIndex) {
-		// TODO Auto-generated method stub
-		return null;
+		return sequence.get(bIndex);
 	}
 	
 	/**
 	Placeholder until partner finishes implementation of ProgressInterface
 	*/
 
+	/* 	
+	9. Look at the next few lines of code and understand what they do: create a label, 
+	initialize the ArrayList (I called mine "sequence", you will have to change yours to 
+	reflect the name of your ArrayList<MoveInterfaceX> field.) and set lastSelectedButton to -1 
+	(since no buttons have been selected yet.) The next line adds instances of MoveInterfaceX to
+	 the ArrayList (again, change the name of sequence, if necessary) 
+	 but calls a method named randomMove(). 
+	Create this method now. You will write this method next.
+	*/		
+			
 	private ProgressInterfaceKevin getProgress() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -223,7 +230,7 @@ public class SimonScreenKevin extends ClickableScreen implements Runnable {
 		}
 		
 	}
-//yeet
+
 	/**
 	Placeholder until partner finishes implementation of ProgressInterface
 	*/
@@ -232,6 +239,4 @@ public class SimonScreenKevin extends ClickableScreen implements Runnable {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 }

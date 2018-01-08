@@ -1,4 +1,4 @@
-package myStuff;
+package myStuff.simonproject;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -122,10 +122,10 @@ public class SimonScreenTristan extends ClickableScreen implements Runnable{
 	}
 
 	protected void gameOver() {
-		// TODO Auto-generated method stub	}
-
+	}
+	
 	private ButtonInterfaceTristan getAButton() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
