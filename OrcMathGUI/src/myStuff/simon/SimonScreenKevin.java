@@ -140,10 +140,19 @@ public class SimonScreenKevin extends ClickableScreen implements Runnable {
 		    return getMove(index);
 	}
 
+	/**
+	Placeholder until partner finishes implementation of ProgressInterface
+	*/
+
+	
 	private MoveInterfaceKevin getMove(int bIndex) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	/**
+	Placeholder until partner finishes implementation of ProgressInterface
+	*/
 
 	private ProgressInterfaceKevin getProgress() {
 		// TODO Auto-generated method stub
@@ -216,6 +225,10 @@ public class SimonScreenKevin extends ClickableScreen implements Runnable {
 		}
 		
 	}
+//yeet
+	/**
+	Placeholder until partner finishes implementation of ProgressInterface
+	*/
 
 	private ButtonInterfaceKevin getAButton() {
 		// TODO Auto-generated method stub
