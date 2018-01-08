@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import guiTeacher.components.Action;
+import guiTeacher.components.Button;
 import guiTeacher.components.TextArea;
 import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.ClickableScreen;
@@ -109,6 +110,7 @@ public class SimonScreenKevin extends ClickableScreen implements Runnable {
 
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
+		textBox = new TextArea(130,230,300,40,"Let's play Simon!");
 		setBackground(Color.black);
 		textBox.setCustomTextColor(Color.white);
 		addButtons();
@@ -165,16 +167,16 @@ public class SimonScreenKevin extends ClickableScreen implements Runnable {
 	}
 
 	private void addButtons() {
-		ButtonInterfaceKevin[] buttonInt = new ButtonInterfaceKevin[6];
 		numButton = 6;
+		ButtonInterfaceKevin[] buttonInt = new ButtonInterfaceKevin[numButton];
 		Color[] colorArr = new Color[6];
-		colorArr[1] = Color.blue;
-		colorArr[2] = Color.magenta;
-		colorArr[3] = Color.pink;
-		colorArr[4] = Color.red;
-		colorArr[5] = Color.orange;
-		colorArr[6] = Color.yellow;
-		for(int i =0; i<buttonInt.length; i--)
+		colorArr[0] = Color.blue;
+		colorArr[1] = Color.magenta;
+		colorArr[2] = Color.pink;
+		colorArr[3] = Color.red;
+		colorArr[4] = Color.orange;
+		colorArr[5] = Color.yellow;
+		for(int i = 0; i< numButton; i++)
 		{
 			final ButtonInterfaceKevin b = getAButton();
 			buttonInt[i] = b;
