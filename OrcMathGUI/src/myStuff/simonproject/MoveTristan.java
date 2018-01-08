@@ -2,7 +2,7 @@ package myStuff.simonproject;
 
 public class MoveTristan implements MoveInterfaceTristan {
 
-	public MoveTristan() {
+	public MoveTristan() {//
 		// TODO Auto-generated constructor stub
 	}
 

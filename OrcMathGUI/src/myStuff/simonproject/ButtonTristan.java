@@ -14,7 +14,7 @@ public class ButtonTristan extends Button implements ButtonInterfaceTristan {
 	}
 
 	@Override
-	public void drawButton(Graphics2D g, boolean hover){
+	public void drawButton(Graphics2D g, boolean hover){//
 		g.setColor(Color.black);
 		g.drawString("String1" , 200, 150);
 		g.drawString("String2" , 200, 250);

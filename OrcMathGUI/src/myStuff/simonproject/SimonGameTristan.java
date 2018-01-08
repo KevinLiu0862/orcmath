@@ -16,7 +16,7 @@ public class SimonGameTristan extends GUIApplication {
 	public void initScreen() {
 		screen = new SimonScreenTristan(getWidth(), getHeight());
 		setScreen(screen);
-
+//
 	}
 	public static void main(String[] args)
 	{

@@ -12,7 +12,7 @@ public class ProgressTristan implements ProgressInterfaceTristan {
 	}
 
 	public void update(Graphics2D g, boolean hover){
-		g.setColor(Color.black);
+		g.setColor(Color.black);//
 		g.drawString("String1" , 150, 200);
 		g.drawString("String2" , 250, 200);
 	}

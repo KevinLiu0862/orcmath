@@ -122,7 +122,7 @@ public class SimonScreenTristan extends ClickableScreen implements Runnable{
 	}
 
 	protected void gameOver() {
-	}
+	}//
 	
 	private ButtonInterfaceTristan getAButton() {
 		
