@@ -11,7 +11,7 @@ public class ButtonKevin extends Button implements ButtonInterfaceKevin{
 	public ButtonKevin(int x, int y, int w, int h, String text, Action action) {
 		super(x, y, w, h, "", null);
 
-		update();
+		update();  
 	}
 
 	@Override
