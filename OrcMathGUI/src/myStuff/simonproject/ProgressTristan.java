@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-
+//
 public class ProgressTristan implements ProgressInterfaceTristan {
 
 	public ProgressTristan() {

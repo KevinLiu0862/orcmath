@@ -31,7 +31,7 @@ public class SimonScreenTristan extends ClickableScreen implements Runnable{
 		for(ButtonInterfaceTristan b: buttons){ 
 		    viewObjects.add(b); 
 		}
-
+//
 		progress = getProgress();
 		label = new TextLabel(130,230,300,40,"Let's play Simon!");
 		sequence = new ArrayList<MoveInterfaceTristan>();

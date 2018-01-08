@@ -11,7 +11,7 @@ public class ButtonTristan extends Button implements ButtonInterfaceTristan {
 
 	public ButtonTristan(int x, int y, int w, int h, String s, Action a) {
 		super(x, y, w, h,"",null);
-	}
+	}//
 
 	@Override
 	public void drawButton(Graphics2D g, boolean hover){//

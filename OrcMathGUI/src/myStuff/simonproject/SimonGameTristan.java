@@ -26,4 +26,4 @@ public class SimonGameTristan extends GUIApplication {
 	}
 
 
-}
+}//
