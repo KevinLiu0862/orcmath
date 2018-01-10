@@ -5,240 +5,182 @@ import java.util.ArrayList;
 import java.util.List;
 
 import guiTeacher.components.Action;
-import guiTeacher.components.Button;
-import guiTeacher.components.TextArea;
+import guiTeacher.components.TextLabel;
 import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.ClickableScreen;
 
-public class SimonScreenKevin extends ClickableScreen implements Runnable {
-
-	public ProgressInterfaceKevin progressInt;
-	public ButtonInterfaceKevin[] buttonInt;
-	public Color[] colorArr;
+public class SimonScreenKevin extends ClickableScreen implements Runnable{
+	private static ProgressInterfaceKevin progress;
 	private ArrayList<MoveInterfaceKevin> sequence;
-	private TextArea textBox;
-	public int roundNumber; 
-	private int numTracker; //for roundNumber
-	
+	private TextLabel label;
+	private static ButtonInterfaceKevin[] buttons;
+	private int roundNumber;
+	private boolean acceptingInput;
 	private int sequenceIndex;
-	private int lastSelected;
-	private int numButton;
-	private boolean acceptUser;
-	private SimonScreenKevin screen;
+	private static int lastSelectedButton;
 	
 	public SimonScreenKevin(int width, int height) {
 		super(width, height);
 		Thread app = new Thread(this);
 		app.start();
 	}
-
-	@Override
-	public void run() {
-		 textBox.setText("");
-		 nextRound();
-	}
-
-	private void nextRound() {
-		acceptUser = false;
-		roundNumber++;
-		sequence.add(randomMove());
-		ProgressInterfaceKevin.setRound(roundNumber);
-		ProgressInterfaceKevin.setSequenceSize(sequence.size());
-		changeText("Simon's turn.");
-		textBox.setText("");
-		playSequence();
-		changeText("Your turn.");
-		acceptUser = true;
-		sequenceIndex = 0;
-	}
-	private void playSequence() {
-		final ButtonInterfaceKevin b = getAButton();
-		for(int i = 0; i<sequence.size(); i++)
-		{
-			if(b != null)
-			{
-				b.dim();
-			}
-				
-			int sleepTime = roundNumber*3;
-			Thread sleepT = new Thread(new Runnable(){
-
-				public void run()
-				{
-					b.highlight();
-					try 
-					{
-						Thread.sleep(sleepTime);
-					} 
-					catch (InterruptedException e) 
-					{
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					b.dim();
-				}
-						
-				});
-			sleepT.start();
-		}
-			
-	}
-
-	private void changeText(String x)
-	{
-		Thread text = new Thread(new Runnable(){
-
-			public void run()
-			{
-				textBox.setText(x);
-				try 
-				{
-					Thread.sleep(1000);
-				} 
-				catch (InterruptedException e) 
-				{
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-			}
-				
-			});
-		text.start();
-	}
 	
-
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
-		textBox = new TextArea(130,230,300,40,"Let's play Simon!");
-		setBackground(Color.black);
-		textBox.setCustomTextColor(Color.white);
 		addButtons();
-		run();
-		for(ButtonInterfaceKevin j: buttonInt)
-		{ 
-		    viewObjects.add(j); 
+		for(ButtonInterfaceKevin b: buttons){ 
+		    viewObjects.add(b); 
 		}
-		progressInt = getProgress();
-		textBox = new TextArea(130,230,300,40,"Let's play Simon!");
+//
+		progress = getProgress();
+		label = new TextLabel(130,230,300,40,"Let's play Simon!");
 		sequence = new ArrayList<MoveInterfaceKevin>();
 		//add 2 moves to start
-		lastSelected = -1;
-		progressInt.add(randomMove());
-		progressInt.add(randomMove());
+		lastSelectedButton = -1;
+		sequence.add(randomMove());
+		sequence.add(randomMove());
 		roundNumber = 0;
-		viewObjects.add(progressInt);
-		viewObjects.add(textBox);
-
+		viewObjects.add(progress);
+		viewObjects.add(label);
 	}
 
-	private MoveInterfaceKevin randomMove() {
-		  int index = (int)(Math.random()*buttonInt.length);
-		    while(index == lastSelected){
-		        index = (int)(Math.random()*buttonInt.length);
-		    }
-		    return getMove(index);
+
+
+	public MoveInterfaceKevin randomMove() {
+		int selectedButton = (int)(Math.random()*buttons.length);
+		while(selectedButton == lastSelectedButton) {
+			selectedButton = (int)(Math.random()*buttons.length);
+		}
+		lastSelectedButton = selectedButton;
+		return getMove(selectedButton);
 	}
 
-	/**
-	Placeholder until partner finishes implementation of ProgressInterface
-	*/
-	private MoveInterfaceKevin getMove(int bIndex) {
-		return sequence.get(bIndex);
-	}
-	
-	/**
-	Placeholder until partner finishes implementation of ProgressInterface
-	*/
-
-	/* 	
-	9. Look at the next few lines of code and understand what they do: create a label, 
-	initialize the ArrayList (I called mine "sequence", you will have to change yours to 
-	reflect the name of your ArrayList<MoveInterfaceX> field.) and set lastSelectedButton to -1 
-	(since no buttons have been selected yet.) The next line adds instances of MoveInterfaceX to
-	 the ArrayList (again, change the name of sequence, if necessary) 
-	 but calls a method named randomMove(). 
-	Create this method now. You will write this method next.
-	*/		
-			
-	private ProgressInterfaceKevin getProgress() {
-		
+	private MoveInterfaceKevin getMove(int selectedButton) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
-	private void addButtons() {
-		numButton = 6;
-		ButtonInterfaceKevin[] buttonInt = new ButtonInterfaceKevin[numButton];
-		Color[] colorArr = new Color[6];
-		colorArr[0] = Color.blue;
-		colorArr[1] = Color.magenta;
-		colorArr[2] = Color.pink;
-		colorArr[3] = Color.red;
-		colorArr[4] = Color.orange;
-		colorArr[5] = Color.yellow;
-		for(int i = 0; i< numButton; i++)
-		{
+	/**
+	Placeholder until partner finishes implementation of ProgressInterface
+	*/
+
+	private ProgressInterfaceKevin getProgress() { 
+	    // TODO Auto-generated method stub 
+	    return null; 
+	}
+
+	public void addButtons() {
+		int numberOfButtons = 6;
+		buttons = new ButtonInterfaceKevin[numberOfButtons];
+		Color[] colors = new Color[numberOfButtons];
+		int x = 200;
+		int y = 200;
+		for(int i = 0; i < colors.length; i++) {
+			colors[i] = new Color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
+		}
+
+		for(int j = 0; j < buttons.length; j++) {
 			final ButtonInterfaceKevin b = getAButton();
-			buttonInt[i] = b;
-			b.setColor(colorArr[i]);
-			b.setX(i*30);
-			b.setY(i*25);
-			
-		
+			b.setColor(colors[j]);
+		    b.setX(x);
+		    b.setY(y);
 			b.setAction(new Action(){
-
-				public void act()
-				{
-					if(acceptUser)
-					{
-						Thread blinkButton = new Thread(new Runnable(){
-
-							public void run()
-							{
+				public void act(){
+					if(acceptingInput) {
+						Thread blink = new Thread(new Runnable(){
+							public void run(){
 								b.highlight();
-								try 
-								{
+								try {
 									Thread.sleep(800);
-								} 
-								catch (InterruptedException e) 
-								{
+								} catch (InterruptedException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
 								b.dim();
 							}
-								
-							});
-						blinkButton.start();
+						});
+						blink.start();
+						if(b == sequence.get(sequenceIndex).getButton()) {
+							sequenceIndex++;
+							if(sequenceIndex == sequence.size()){ 
+							    Thread nextRound = new Thread(SimonScreenKevin.this); 
+							    nextRound.start(); 
+							}
+						}
+						else {
+							gameOver();
+						}
 					}
 				}
-
-				});
-			
-			if (b == sequence.get(sequenceIndex).getAButton()) //change
-			{
-				sequenceIndex++;
-				if(sequenceIndex == sequence.size()){ 
-				    Thread nextRound = new Thread(SimonScreenKevin.this); 
-				    nextRound.start(); 
-				}
+			});
+			buttons[j] = b;
+			x += 50;
+			if(j == 4) {
+				y += 100;
 			}
-			else
-			{
-				ProgressInterfaceKevin.gameOver();
-			}
-			
-			
 		}
-		
 	}
 
-	/**
-	Placeholder until partner finishes implementation of ProgressInterface
-	*/
-
+	protected void gameOver() {
+	}//
+	
 	private ButtonInterfaceKevin getAButton() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
+
+	@Override
+	public void run() {
+		label.setText("");
+	    nextRound();
+	}
+
+	private void nextRound() {
+		acceptingInput = false;
+		roundNumber++;
+		sequence.add(randomMove());
+		progress.setRound(roundNumber);
+		progress.setSequenceSize(sequence.size());
+		changeText("Simon's turn");
+		playSequence();
+		changeText("Your turn");
+		acceptingInput = true;
+		sequenceIndex = 0;
+	}
+	public void changeText(String text) {
+		Thread changer = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				label.setText(text);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				label.setText("");
+			}
+		});
+	}
+
+	public void playSequence() {
+		ButtonInterfaceKevin b = null;
+		for(int i = 0; i < sequence.size(); i++) {
+			if(b != null) {
+				b.dim();
+			}
+			b = sequence.get(i).getButton();
+			b.highlight();
+			int sleepTime = (int) Math.log(Math.pow(2, roundNumber)) + 3;
+			try {
+				Thread.sleep(sleepTime);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		b.dim();
+	}
+
 }

@@ -1,24 +1,17 @@
 package myStuff.simon;
 
 import guiTeacher.components.Action;
+import myStuff.simonproject.ButtonInterfaceTristan;
 
 public class MoveKevin implements MoveInterfaceKevin{
 
-	public MoveKevin() {
-		super();
-		
-	}
-	
-	@Override
-	public Object get(int sequenceIndex) {
-		// TODO Auto-generated method stub
-		return null;
+	public MoveKevin() {//
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public ButtonInterfaceKevin getAButton() {
+	public ButtonInterfaceKevin getButton() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
